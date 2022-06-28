@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: b598578873aa79a48952bcf916a9baae
+timeCreated: 1530816053
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: 968#1_001
+    100002: 968#1_002
+    100004: D#1_001
+    100006: D#1_002
+    100008: HH#1_001
+    100010: HH#1_002
+    100012: LM#1_001
+    100014: LM#1_002
+    100016: //RootNode
+    100018: Mazda6_Bod_001
+    100020: Mazda6_Coc_001
+    100022: Mazda6_Whe_001
+    100024: Object01_001
+    100026: Plate 24_001
+    100028: Plate 24_003
+    100030: Plate Holder_001
+    400000: 968#1_001
+    400002: 968#1_002
+    400004: D#1_001
+    400006: D#1_002
+    400008: HH#1_001
+    400010: HH#1_002
+    400012: LM#1_001
+    400014: LM#1_002
+    400016: //RootNode
+    400018: Mazda6_Bod_001
+    400020: Mazda6_Coc_001
+    400022: Mazda6_Whe_001
+    400024: Object01_001
+    400026: Plate 24_001
+    400028: Plate 24_003
+    400030: Plate Holder_001
+    2300000: 968#1_001
+    2300002: 968#1_002
+    2300004: D#1_001
+    2300006: D#1_002
+    2300008: HH#1_001
+    2300010: HH#1_002
+    2300012: LM#1_001
+    2300014: LM#1_002
+    2300016: Mazda6_Bod_001
+    2300018: Mazda6_Coc_001
+    2300020: Mazda6_Whe_001
+    2300022: Object01_001
+    2300024: Plate 24_001
+    2300026: Plate 24_003
+    2300028: Plate Holder_001
+    3300000: 968#1_001
+    3300002: 968#1_002
+    3300004: D#1_001
+    3300006: D#1_002
+    3300008: HH#1_001
+    3300010: HH#1_002
+    3300012: LM#1_001
+    3300014: LM#1_002
+    3300016: Mazda6_Bod_001
+    3300018: Mazda6_Coc_001
+    3300020: Mazda6_Whe_001
+    3300022: Object01_001
+    3300024: Plate 24_001
+    3300026: Plate 24_003
+    3300028: Plate Holder_001
+    4300000: 968#1_002
+    4300002: LM#1_002
+    4300004: HH#1_002
+    4300006: D#1_002
+    4300008: Plate 24_003
+    4300010: Object01_001
+    4300012: Mazda6_Whe_001
+    4300014: Mazda6_Coc_001
+    4300016: Plate Holder_001
+    4300018: 968#1_001
+    4300020: LM#1_001
+    4300022: HH#1_001
+    4300024: D#1_001
+    4300026: Plate 24_001
+    4300028: Mazda6_Bod_001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

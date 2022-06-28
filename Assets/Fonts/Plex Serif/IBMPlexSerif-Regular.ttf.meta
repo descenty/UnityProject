@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 8640685cd4c25d64298c2e17500ba883
+timeCreated: 1522261786
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: IBM Plex Serif
+  fontNames:
+  - IBM Plex Serif
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7725d1d006fd7454688929d19a93224b, type: 3}
+  - {fileID: 12800000, guid: 72d806d7b5099e64796b4e68997cfb4f, type: 3}
+  - {fileID: 12800000, guid: 56dd64ea23abdd0409e7308336b17c8b, type: 3}
+  - {fileID: 12800000, guid: 191fef2bfd5647e4f9fbd54af2a275fa, type: 3}
+  - {fileID: 12800000, guid: 3c3eaeae1291d2b469e315e318786aa6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

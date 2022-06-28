@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356cdf01185f5c344a436efa41d95b58, type: 3}
+  m_Name: Cappuccino
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: ad0a10f0d87b3b449945f04e01b54ebb, type: 3}
+  ingredientsAmount:
+  - ingredient: {fileID: 11400000, guid: f2f02f55d06d7e044879ba13de39aaf7, type: 2}
+    ml: 30
+  - ingredient: {fileID: 11400000, guid: 3267a64d04a8450419db359943c11796, type: 2}
+    ml: 60
+  - ingredient: {fileID: 11400000, guid: 2d45a6c217bcffc438c19a95793d4c34, type: 2}
+    ml: 60

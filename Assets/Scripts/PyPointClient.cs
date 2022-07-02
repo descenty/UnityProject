@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Networking;
-public class PyPointClient : MonoBehaviour
+using Cysharp.Threading.Tasks;
+using UnityEngine;
+
+
+public class PyPointClient
 {
+    public static class Urls
+    {
+        public static readonly string auth = "token-auth/";
+        public static readonly string pickPoints = "pick-points/";
+        public static readonly string tokenCheck = pickPoints;
+    }
     [System.Serializable]
     public class PickPoint
     {
@@ -13,29 +22,51 @@ public class PyPointClient : MonoBehaviour
         public int cellsCount;
         public string owner;
     }
-    void Start() {
-        StartCoroutine(GetText());
+
+    private PyPointUIController controller;
+    private string url = "";
+    private string authToken = "";
+
+    public PyPointClient(PyPointUIController controller, string url){
+        this.controller = controller;
+        this.url = url;
     }
- 
-    IEnumerator GetText() {
-        UnityWebRequest www = UnityWebRequest.Get("http://127.0.0.1:8000/api/pick-points/1/");
-        www.SetRequestHeader("Content-Type", "application/json");
-        yield return www.SendWebRequest();
- 
-        if (www.result != UnityWebRequest.Result.Success) {
-            Debug.Log(www.error);
+
+    private UnityWebRequest UnityAuthWebRequest(string url)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(url + Urls.tokenCheck);
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Authorization", $"Token {authToken}");
+        return request;
+    }
+
+    public async UniTask<bool> Authenticate(string authToken)
+    {
+        UnityWebRequest request = UnityAuthWebRequest(url + Urls.tokenCheck);
+        await request.SendWebRequest();
+        if (request.result == UnityWebRequest.Result.Success){
+            this.authToken = authToken;
+            return true;
         }
-        else {
-            // Show results as text
-            PickPoint pickPoint = JsonUtility.FromJson<PickPoint>(www.downloadHandler.text);
-            print(pickPoint.id);
-            print(pickPoint.address);
-            print(pickPoint.rating);
-            print(pickPoint.cellsCount);
-            print(pickPoint.owner);
- 
-            // Or retrieve results as binary data
-            byte[] results = www.downloadHandler.data;
+        else
+            return false;
+    }
+
+    public async UniTask<List<PickPoint>> GetPickPoints()
+    {
+        UnityWebRequest request = UnityAuthWebRequest(url + Urls.pickPoints);
+        await request.SendWebRequest();
+        if (request.responseCode == 403)
+        {
+            controller.ShowAuthErrorPage();
+            return null;
         }
+        else if (request.result != UnityWebRequest.Result.Success)
+        {
+            controller.ShowUnexpectedErrorPage();
+            return null;
+        }
+        else
+            return JsonUtility.FromJson<List<PickPoint>>(request.downloadHandler.text);
     }
 }

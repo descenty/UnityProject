@@ -24,7 +24,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInput"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""Main"",
             ""id"": ""6171f105-41b0-416c-8f02-4e78b6853ea7"",
             ""actions"": [
                 {
@@ -235,15 +235,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_LeftClick = m_Player.FindAction("LeftClick", throwIfNotFound: true);
-        m_Player_RightClick = m_Player.FindAction("RightClick", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Changeview = m_Player.FindAction("Change view", throwIfNotFound: true);
-        m_Player_Handbrake = m_Player.FindAction("Handbrake", throwIfNotFound: true);
-        m_Player_Boost = m_Player.FindAction("Boost", throwIfNotFound: true);
+        // Main
+        m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
+        m_Main_LeftClick = m_Main.FindAction("LeftClick", throwIfNotFound: true);
+        m_Main_RightClick = m_Main.FindAction("RightClick", throwIfNotFound: true);
+        m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
+        m_Main_Look = m_Main.FindAction("Look", throwIfNotFound: true);
+        m_Main_Changeview = m_Main.FindAction("Change view", throwIfNotFound: true);
+        m_Main_Handbrake = m_Main.FindAction("Handbrake", throwIfNotFound: true);
+        m_Main_Boost = m_Main.FindAction("Boost", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -300,59 +300,59 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_LeftClick;
-    private readonly InputAction m_Player_RightClick;
-    private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Changeview;
-    private readonly InputAction m_Player_Handbrake;
-    private readonly InputAction m_Player_Boost;
-    public struct PlayerActions
+    // Main
+    private readonly InputActionMap m_Main;
+    private IMainActions m_MainActionsCallbackInterface;
+    private readonly InputAction m_Main_LeftClick;
+    private readonly InputAction m_Main_RightClick;
+    private readonly InputAction m_Main_Move;
+    private readonly InputAction m_Main_Look;
+    private readonly InputAction m_Main_Changeview;
+    private readonly InputAction m_Main_Handbrake;
+    private readonly InputAction m_Main_Boost;
+    public struct MainActions
     {
         private @PlayerInput m_Wrapper;
-        public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LeftClick => m_Wrapper.m_Player_LeftClick;
-        public InputAction @RightClick => m_Wrapper.m_Player_RightClick;
-        public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Changeview => m_Wrapper.m_Player_Changeview;
-        public InputAction @Handbrake => m_Wrapper.m_Player_Handbrake;
-        public InputAction @Boost => m_Wrapper.m_Player_Boost;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public MainActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftClick => m_Wrapper.m_Main_LeftClick;
+        public InputAction @RightClick => m_Wrapper.m_Main_RightClick;
+        public InputAction @Move => m_Wrapper.m_Main_Move;
+        public InputAction @Look => m_Wrapper.m_Main_Look;
+        public InputAction @Changeview => m_Wrapper.m_Main_Changeview;
+        public InputAction @Handbrake => m_Wrapper.m_Main_Handbrake;
+        public InputAction @Boost => m_Wrapper.m_Main_Boost;
+        public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(MainActions set) { return set.Get(); }
+        public void SetCallbacks(IMainActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_MainActionsCallbackInterface != null)
             {
-                @LeftClick.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftClick;
-                @LeftClick.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftClick;
-                @LeftClick.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLeftClick;
-                @RightClick.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightClick;
-                @RightClick.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightClick;
-                @RightClick.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRightClick;
-                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Changeview.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeview;
-                @Changeview.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeview;
-                @Changeview.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeview;
-                @Handbrake.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHandbrake;
-                @Handbrake.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHandbrake;
-                @Handbrake.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHandbrake;
-                @Boost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoost;
-                @Boost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoost;
-                @Boost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoost;
+                @LeftClick.started -= m_Wrapper.m_MainActionsCallbackInterface.OnLeftClick;
+                @LeftClick.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnLeftClick;
+                @LeftClick.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnLeftClick;
+                @RightClick.started -= m_Wrapper.m_MainActionsCallbackInterface.OnRightClick;
+                @RightClick.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnRightClick;
+                @RightClick.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnRightClick;
+                @Move.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Look.started -= m_Wrapper.m_MainActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnLook;
+                @Changeview.started -= m_Wrapper.m_MainActionsCallbackInterface.OnChangeview;
+                @Changeview.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnChangeview;
+                @Changeview.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnChangeview;
+                @Handbrake.started -= m_Wrapper.m_MainActionsCallbackInterface.OnHandbrake;
+                @Handbrake.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnHandbrake;
+                @Handbrake.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnHandbrake;
+                @Boost.started -= m_Wrapper.m_MainActionsCallbackInterface.OnBoost;
+                @Boost.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnBoost;
+                @Boost.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnBoost;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @LeftClick.started += instance.OnLeftClick;
@@ -379,7 +379,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public MainActions @Main => new MainActions(this);
     private int m_KeyboardandMouseSchemeIndex = -1;
     public InputControlScheme KeyboardandMouseScheme
     {
@@ -389,7 +389,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardandMouseSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IMainActions
     {
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);

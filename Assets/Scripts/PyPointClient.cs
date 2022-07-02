@@ -23,14 +23,14 @@ public class PyPointClient
         public string owner;
     }
 
-    private PyPointUIController controller;
+    private PyPointUITerminal terminal;
     private string url = "";
     private string authToken = "";
 
-    public PyPointClient(PyPointUIController controller, string url){
-        this.controller = controller;
+     public PyPointClient(PyPointUITerminal terminal, string url){
+        this.terminal = terminal;
         this.url = url;
-    }
+    } 
 
     private UnityWebRequest UnityAuthWebRequest(string url)
     {
@@ -58,12 +58,12 @@ public class PyPointClient
         await request.SendWebRequest();
         if (request.responseCode == 403)
         {
-            controller.ShowAuthErrorPage();
+            terminal.ShowAuthErrorPage();
             return null;
         }
         else if (request.result != UnityWebRequest.Result.Success)
         {
-            controller.ShowUnexpectedErrorPage();
+            terminal.ShowUnexpectedErrorPage();
             return null;
         }
         else

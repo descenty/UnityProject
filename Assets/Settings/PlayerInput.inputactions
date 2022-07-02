@@ -2,7 +2,7 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Player",
+            "name": "Main",
             "id": "6171f105-41b0-416c-8f02-4e78b6853ea7",
             "actions": [
                 {
@@ -11,7 +11,8 @@
                     "id": "4af98431-e8c3-4704-a818-d2c85e5a743d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightClick",
@@ -19,7 +20,8 @@
                     "id": "a1dee981-5128-49db-bdad-4eddf1a562cf",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Move",
@@ -27,7 +29,8 @@
                     "id": "ffe03d94-9db5-45f1-82cd-457e8276b65b",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Look",
@@ -35,7 +38,8 @@
                     "id": "905456cf-07d5-4e86-bbe0-8647d8c60c12",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Change view",
@@ -43,7 +47,8 @@
                     "id": "fda367aa-2239-4159-a822-980f67767f0e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Handbrake",
@@ -51,7 +56,8 @@
                     "id": "cd2839a8-3d77-43d0-af4c-5583c8f57f62",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Boost",
@@ -59,7 +65,8 @@
                     "id": "b123b6fb-7760-4c27-9839-607127e21b58",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
